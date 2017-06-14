@@ -1,30 +1,30 @@
 angular.module('devmtnTravel', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('home',{
+            .state('home', {
                 url:'/',
                 templateUrl: "../views/about.html"
-            }).state('adventurers',{
+            }).state('adventurers', {
                 url:'/adventurers',
                 parent:'home',
                 templateUrl: './views/about-adventurers.html'
             })
-            .state('contact',{
+            .state('contact', {
                 url:'/contact',
                 parent:'home',
                 templateUrl: "./views/contact.html"
             })
-            .state('packages',{
+            .state('packages', {
                 url:'/packages',
                 templateUrl: "./views/packages.html",
                 controller: 'packagesCtrl'
             })
-            .state('booked',{
+            .state('booked', {
                 url:'/booked',
                 templateUrl: "./views/booked.html",
                 controller: 'bookedCtrl'
             })
-            .state('locations',{
+            .state('locations', {
                 url:'/locations',
                 templateUrl: "./views/locations.html",
                 controller: 'locationsCtrl'
