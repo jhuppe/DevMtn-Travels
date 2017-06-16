@@ -4,6 +4,7 @@ angular.module('devmtnTravel').service('mainSrv', function(){
         image: "../img/US.jpg",
         desc: 'The U.S. is a country of 50 states covering a vast swath of North America. Major Atlantic Coast cities are New York, and capital Washington, DC',
         price: 1345
+
     }, {
         country: 'France',
         image: "../img/France.jpg",
@@ -14,6 +15,7 @@ angular.module('devmtnTravel').service('mainSrv', function(){
         image: "../img/Australia.jpg",
         desc: "Australia is a country and continent surrounded by the Indian and Pacific oceans. Its major cities – Sydney, Brisbane, Melbourne, Perth, Adelaide – are coastal. Its capital, Canberra, is inland. ",
         price: 1112
+
     }];
 		this.packageInfo = [{
 				city: "Bordeaux",
@@ -44,7 +46,7 @@ angular.module('devmtnTravel').service('mainSrv', function(){
 				id: 9309,
 				price: 1345.35
 			},{
-				city: "San Fransisco",
+				city: "San Francisco",
 				country: "United States",
 				image: "../img/SFBridge.jpg",
 				desc: "San Francisco is known for its year-round fog, iconic Golden Gate Bridge, cable cars and colorful Victorian houses. In the bay sits Alcatraz Island, site of the notorious former prison.",
@@ -80,4 +82,14 @@ angular.module('devmtnTravel').service('mainSrv', function(){
 				price: 1722.12
 			},
 		]
+    this.findPackages = function (country) {
+      var showCities = [];
+      this.packageInfo.forEach(function(package) {
+          if(package.country === country) {
+          showCities.push(package)
+        }
+      })
+      return showCities;
+      };
+
 })

@@ -1,3 +1,5 @@
-angular.module('devmtnTravel').controller('packagesCtrl', function($scope, mainSrv) {
-  $scope.test="This should work."
+angular.module('devmtnTravel').controller('packagesCtrl',
+function($scope, mainSrv, $stateParams) {
+
+  $scope.packageInfo = $stateParams.country ? mainSrv.findPackages($stateParams.country) : mainSrv.packageInfo;
 })

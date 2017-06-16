@@ -15,12 +15,12 @@ angular.module('devmtnTravel', ['ui.router'])
                 templateUrl: "./views/contact.html"
             })
             .state('packages', {
-                url:'/packages',
+                url:'/packages/:country',
                 templateUrl: "./views/packages.html",
                 controller: 'packagesCtrl'
             })
             .state('booked', {
-                url:'/booked',
+                url:'/booked/:id',
                 templateUrl: "./views/booked.html",
                 controller: 'bookedCtrl'
             })
